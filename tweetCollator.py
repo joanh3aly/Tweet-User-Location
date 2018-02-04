@@ -12,8 +12,6 @@ import numpy as np
 import threading
 import time
 
-# The consumer keys can be found on your application's Details
-# page located at https://dev.twitter.com/apps (under "OAuth settings")
 CONSUMER_KEY="hVXOnpdbN0uLtAUSEjOdUgL6b"
 CONSUMER_SECRET="CWYDtRZTFJdN5WQO6WaVkNoLYDuWpBFilAhFZEnbqqQKMfDX8f"
 ACCESS_TOKEN="1577934554-zSVtsvcwYW9t6ZWom8iBtlcim4R7YFoEvs4uoXy"
@@ -26,14 +24,10 @@ TERMS = [
         
 sgtz = timezone('Asia/Singapore')
 utc = pytz.timezone('UTC')
-        
 regex = re.compile('|'.join(TERMS).lower())   # re.compile(pattern, flags=0)  Compile a regular expression pattern into a regular expression object, which can be used for matching using its match() and search() methods
 linenum_re = re.compile(r'([A-Z][A-Z]\d+)')
-
 retweets_re = re.compile(r'^RT\s')
-
 enc = lambda x: x.encode('latin1', errors='ignore')  # lambda :	 creation of anonymous functions // .encode Encodes obj using the codec registered for encoding. The default encoding is 'ascii'.
-
 
 
 class StdOutListener(StreamListener):
